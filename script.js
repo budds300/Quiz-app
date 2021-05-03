@@ -40,10 +40,10 @@ const quizData=[{
 ]
 const questionE1= document.getElementById("question");
 const quizContainer= document.getElementById("quiz");
-const a_text= document.getElementById("a-text");
-const b_text=document.getElementById("b-text");
-const c_text=document.getElementById("c-text");
-const d_text=document.getElementById("d-text");
+const a_text= document.getElementById("a_text");
+const b_text=document.getElementById("b_text");
+const c_text=document.getElementById("c_text");
+const d_text=document.getElementById("d_text");
 const submitBtn= document.getElementById("submit");
 
 let currentQuiz= 0;
@@ -67,18 +67,18 @@ function getSelected(){
     
     answerE1s.forEach((answerE1)=>{
         if (answerE1.checked){
-            answer=answerE1s.id;
+            answer=answerE1.id;
         }
     });
     return answer;
 }
 function deselectAnswers(){
     const answerE1s=document.querySelectorAll(".answer");
-    answerE1s.forEach((answer)=>{
+    answerE1s.forEach((answerE1)=>{
         answerE1.checked=false;
     });
 }
-submitBtn.addEventListener("click",function(){
+submitBtn.addEventListener("click",()=>{
     const answer= getSelected();
     console.log(answer);
     if(answer){
@@ -86,11 +86,13 @@ submitBtn.addEventListener("click",function(){
             score++
         }
         currentQuiz++;
-        if(currentQuiz< quizData.length){
-            loadQuiz();
-        }else{
-            quizContainer.innerHTML= <h2 style="padding: 1rem"
+    if (currentQuiz < quizData.length) {
+      loadQuiz();
+    } else {
+        quizContainer.innerHTML = `<h2 style="padding: 1rem;text-align:center;">You have answered correctly ${score}/${quizData.length} questions</h2>
+        <button onClick="location.reload()">Reload</button>` 
         }
     }
+    loadQuiz();
 
 })
