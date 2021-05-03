@@ -1,4 +1,4 @@
-const quizz=[{
+const quizData=[{
     quiz:"Who founded the python language?",
     a: "Guido Van Rossum",
     b: "James Gosling",
@@ -81,5 +81,16 @@ function deselectAnswers(){
 submitBtn.addEventListener("click",function(){
     const answer= getSelected();
     console.log(answer);
-    if
+    if(answer){
+        if(answer===quizData[currentQuiz].correct){
+            score++
+        }
+        currentQuiz++;
+        if(currentQuiz< quizData.length){
+            loadQuiz();
+        }else{
+            quizContainer.innerHTML= <h2 style="padding: 1rem"
+        }
+    }
+
 })
