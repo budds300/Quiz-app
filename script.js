@@ -45,3 +45,16 @@ const b_text=document.getElementById("b-text");
 const c_text=document.getElementById("c-text");
 const d_text=document.getElementById("d-text");
 const submitBtn= document.getElementById("submit");
+
+let currentQuiz= 0;
+let answer = undefined; 
+let score = 0;
+
+loadQuiz();
+function loadQuiz(){
+    deselectAnswers();
+    const currentQuizData= quizData[currentQuiz];
+
+    questionE1
+
+}
