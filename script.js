@@ -55,6 +55,18 @@ function loadQuiz(){
     deselectAnswers();
     const currentQuizData= quizData[currentQuiz];
 
-    questionE1
-
+    questionE1.innerText= currentQuizData.quiz;
+    a_text.innerText= currentQuizData.a;
+    b_text.innerText= currentQuizData.b;
+    c_text.innerText=currentQuizData.c;
+    d_text.innerText= currentQuizData.d;
+}
+function getSelected(){
+    const answerE1s = document.querySelectorAll(".answer");
+    answerE1s.forEach((answerE1)=>{
+        if (answerE1.checked){
+            answer=answerE1s.id;
+        }
+    });
+    return answer;
 }
