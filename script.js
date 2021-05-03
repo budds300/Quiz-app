@@ -38,3 +38,10 @@ const quizz=[{
     correct: "d",
 }
 ]
+const questionE1= document.getElementById("question");
+const quizContainer= document.getElementById("quiz");
+const a_text= document.getElementById("a-text");
+const b_text=document.getElementById("b-text");
+const c_text=document.getElementById("c-text");
+const d_text=document.getElementById("d-text");
+const submitBtn= document.getElementById("submit");
