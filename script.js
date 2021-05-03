@@ -63,6 +63,8 @@ function loadQuiz(){
 }
 function getSelected(){
     const answerE1s = document.querySelectorAll(".answer");
+    let answer= undefined;
+    
     answerE1s.forEach((answerE1)=>{
         if (answerE1.checked){
             answer=answerE1s.id;
@@ -70,3 +72,14 @@ function getSelected(){
     });
     return answer;
 }
+function deselectAnswers(){
+    const answerE1s=document.querySelectorAll(".answer");
+    answerE1s.forEach((answer)=>{
+        answerE1.checked=false;
+    });
+}
+submitBtn.addEventListener("click",function(){
+    const answer= getSelected();
+    console.log(answer);
+    if
+})
